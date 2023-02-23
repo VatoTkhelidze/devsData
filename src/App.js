@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Characters from "./components/Characters";
+import Character from "./components/Character";
+import Film from "./components/Film"
+import Species from "./components/Species"
+import Starship from "./components/Starship";
+import Vehicle from "./components/Vehicle";
+import Planet from "./components/Planet";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path='/' element={<Characters />} />
+      <Route path='/characters/:id' element={<Character />} />
+      <Route path='/films/:id' element={<Film />} />
+      <Route path='/species/:id' element={<Species />} />
+      <Route path='/starships/:id' element={<Starship />} />
+      <Route path='/vehicles/:id' element={<Vehicle />} />
+      <Route path='/planets/:id' element={<Planet />} />
+    </Routes>
   );
 }
 
